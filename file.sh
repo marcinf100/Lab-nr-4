@@ -1,7 +1,6 @@
 #!/bin/bash
 
 function logs {
-    # Wskazuje liczbę plików do utworzenia (domyślnie 100, chyba że podano argument)
     local count=${2:-100}
 
     for i in $(seq 1 $count); do
@@ -15,7 +14,6 @@ function logs {
 }
 
 function clone {
-    # Klonuje całe repozytorium do katalogu, w którym został uruchomiony skrypt
     git clone https://github.com/marcinf100/gittt
 }
 
@@ -27,7 +25,6 @@ function init {
 }
 
 function error {
-    # Wskazuje liczbę folderów i plików do utworzenia (domyślnie 100)
     local count=${2:-100}
 
     for i in $(seq 1 $count); do
@@ -49,11 +46,11 @@ function error {
 function help {
     echo "Skrypt: $0"
     echo "Opcje:"
-    echo "  --date, -d       Wyświetla dzisiejszą datę."
-    echo "  --logs, -l [N]   Tworzy N plików logx.txt (domyślnie 100), w których wpisuje nazwę, skrypt i datę."
+    echo "  --date, -d       Wyświetla aktualną datę."
+    echo "  --logs, -l [N]   Tworzy x pliki logx.txt (domyślnie 100), w których wpisuje nazwę, skrypt i datę."
     echo "  --init           Klonuje repozytorium GIT do bieżącego katalogu."
     echo "  --error, -e [N]  Tworzy N folderów errorx, w których jest plik z nazwą, skryptem i datą."
-    echo "  --help, -h       Wyświetla wszystkie dostępne opcje."
+    echo "  --help, -h       Wyświetla wszystkie opcje."
     echo "Przykłady użycia:"
     echo "  ./skrypt.sh --logs"
     echo "  ./skrypt.sh -l 50"
